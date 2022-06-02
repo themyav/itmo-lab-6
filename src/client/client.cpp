@@ -16,16 +16,11 @@
 
 using namespace std;
 
-//10004 вариант
-
 int main ()
 {
 
     setlocale(LC_ALL, "Russian");
     int obj_socket = socket (AF_INET, SOCK_STREAM, 0 );
-    //cout << flush;
-    //fcntl(obj_socket, F_SETFL, O_NONBLOCK);
-
     if (obj_socket < 0){
         cout << "Ошибка при создании сокета!" << endl;
         return -1;
@@ -51,4 +46,3 @@ int main ()
     return 0;
 
 }
-//execute_script /home/myav/CLionProjects/test/resource/input.txt
