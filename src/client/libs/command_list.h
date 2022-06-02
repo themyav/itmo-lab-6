@@ -15,8 +15,6 @@ using namespace std;
 typedef serialization:: Dragon (*func) (string &name, string &args);
 bool script_mode = false;
 
-//не нужны пояснения! команды сервер выполняет, мы тупо валидируем
-
 bool is_empty_string(string_view  name) {
     return all_of(name.begin(), name.end(), [](char ch) {
         return (isspace(ch));
