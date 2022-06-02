@@ -1,0 +1,63 @@
+syntax = "proto2";
+
+package serialization;
+
+option java_package = "com.lab6.serialization";
+option java_outer_classname = "SerializationProtos";
+
+message Dragon{
+
+  enum Color{
+    RED = 1;
+    BLACK = 2;
+    BLUE = 3;
+    WHITE = 4;
+  }
+  enum DragonType{
+    WATER = 1;
+    UNDERGROUND = 2;
+    AIR = 3;
+    FIRE = 4;
+  }
+  enum DragonCharacter{
+    CUNNING = 1;
+    WISE = 2;
+    GOOD = 3;
+    CHAOTIC = 4;
+  }
+
+  optional int32 id = 1; //Поле не может быть null, Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
+  optional string name = 2; //Поле не может быть null, Строка не может быть пустой
+  optional string x = 3;
+  optional int32 age = 4;
+  optional Color color = 5; //Поле может быть null
+  optional DragonType type = 6; //Поле может быть null
+  optional DragonCharacter character = 7; //Поле не может быть null
+  optional string creation_date = 8;
+  optional string y = 11;
+
+  optional string killer_name = 12;
+  optional string killer_birthday = 13;
+  optional string killer_height = 14;
+  optional string killer_weight = 15;
+  optional string killer_passport_id = 16;
+
+  optional string comname = 17;
+  optional string arguments = 18;
+
+}
+
+message DragonCollection {
+  repeated Dragon dragons = 1;
+}
+
+message Command{
+  optional string name = 1;
+  optional string arguments = 2;
+  optional Dragon dragon = 3;
+}
+
+message Response{
+  optional string response = 1;
+  optional DragonCollection collection = 2;
+}
